@@ -5,42 +5,6 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
-
-document.addEventListener("DOMContentLoaded", function () {
-    const gifs = ["images/ganchoGif.gif", "images/parryGif.gif", "images/ejemploGif.gif"];
-    const titles = ["1. Gancho", "2. Parry", "3. Combinación de ambos"];
-    const descriptions = [
-        "Descripción de la mecánica de gancho.",
-        "Descripción de la mecánica de parry.",
-        "Descripción de la mecánica de combinación de ambos."
-    ];
-    const gifContainer = document.getElementById("gif-container");
-    const mechanicTitle = document.getElementById("mechanic-title");
-    const mechanicDescription = document.getElementById("mechanic-description");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-
-    let currentMechanic = 0;
-
-    function updateMechanic() {
-        gifContainer.innerHTML = `<img src="${gifs[currentMechanic]}" alt="Mecánica">`;
-        mechanicTitle.textContent = titles[currentMechanic];
-        mechanicDescription.textContent = descriptions[currentMechanic];
-    }
-
-    prevBtn.addEventListener("click", function () {
-        currentMechanic = (currentMechanic - 1 + gifs.length) % gifs.length;
-        updateMechanic();
-    });
-
-    nextBtn.addEventListener("click", function () {
-        currentMechanic = (currentMechanic + 1) % gifs.length;
-        updateMechanic();
-    });
-
-    updateMechanic();
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const charactersButton = document.getElementById("characters-button");
     const scenariosButton = document.getElementById("scenarios-button");
@@ -52,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryContent.forEach((content) => {
             content.style.display = content.classList.contains("characters") ? "grid" : "none";
         });
+        showNavigation();
     });
 
     scenariosButton.addEventListener("click", () => {
@@ -60,40 +25,86 @@ document.addEventListener("DOMContentLoaded", function () {
         galleryContent.forEach((content) => {
             content.style.display = content.classList.contains("scenarios") ? "grid" : "none";
         });
+        showNavigation();
     });
 
     // Mostrar "Personajes" por defecto al cargar la página
     charactersButton.click();
 
-    // Agregar el evento click para mostrar los Pop-Ups
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    const popupContainer = document.createElement("div");
-    popupContainer.classList.add("popup-container");
-    document.body.appendChild(popupContainer);
+    
+});
 
-    galleryItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            const image = item.querySelector("img");
-            const description = item.getAttribute("data-description");
-            showPopup(image.src, description);
+document.addEventListener("DOMContentLoaded", function () {
+    const videosButton = document.getElementById("videos-button");
+    const imagesButton = document.getElementById("images-button");
+    const artworkButton = document.getElementById("artwork-button");
+    const presskitContent = document.querySelectorAll(".presskit-content");
+
+    videosButton.addEventListener("click", () => {
+        videosButton.classList.add("active");
+        imagesButton.classList.remove("active");
+        artworkButton.classList.remove("active");
+        presskitContent.forEach((content) => {
+            content.style.display = content.classList.contains("videos") ? "grid" : "none";
+        });
+    });
+
+    imagesButton.addEventListener("click", () => {
+        imagesButton.classList.add("active");
+        videosButton.classList.remove("active");
+        artworkButton.classList.remove("active");
+        presskitContent.forEach((content) => {
+            content.style.display = content.classList.contains("images") ? "grid" : "none";
+        });
+    });
+
+    artworkButton.addEventListener("click", () => {
+        artworkButton.classList.add("active");
+        videosButton.classList.remove("active");
+        imagesButton.classList.remove("active");
+        presskitContent.forEach((content) => {
+            content.style.display = content.classList.contains("artwork") ? "grid" : "none";
+        });
+    });
+
+    // Mostrar "Vídeos" por defecto al cargar la página
+    videosButton.click();
+});
+
+$(document).ready(function () {
+    $(".fancybox").fancybox({
+        type: "iframe", // Indica que el contenido es un iframe (video)
+        iframe: {
+            preload: false // Evita la carga previa del iframe para mejorar el rendimiento
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Envía el formulario usando FormData
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert('¡Mensaje enviado con éxito!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
         });
 
-        // Función para mostrar el Pop-Up
-        function showPopup(imageSrc, description) {
-            popupContainer.innerHTML = `
-                <div class="popup">
-                    <img src="${imageSrc}" alt="Popup Image">
-                    <p class="popup-description">${description}</p>
-                    <button class="close-popup">Cerrar</button>
-                </div>
-            `;
-            popupContainer.style.display = "flex";
-
-            const closePopupButton = document.querySelector(".close-popup");
-            closePopupButton.addEventListener("click", () => {
-                popupContainer.style.display = "none";
-                popupContainer.innerHTML = "";
-            });
-        }
+        form.reset();
     });
 });
