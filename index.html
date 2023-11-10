@@ -13,6 +13,12 @@
     <link href="css/styles.css" rel="stylesheet" />
     <!-- Para los iconos de las redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Plantilla de Light Box -->
+    <link href="css/lightbox.css" rel="stylesheet" />
+    <!-- Importación de Fancy Box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </head>
 
 <body>
@@ -39,11 +45,10 @@
         <div class="animated animatedFadeInUp fadeInUpTitle">
             <img src="images/bannervcone2.png" alt="Logo Empresa">
         </div>
-        <div class="animated animatedFadeInUp fadeInUpSubtitle">
-            <h2>Lema de la Empresa</h2>
-        </div>
     </header>
-    <!-- Descripción del proyecto -->
+
+
+    <!-- Project section -->
     <section class="py-5">
         <div class="container my-5 text-center">
             <h2 style="margin-bottom: 50px;">Nuestro proyecto</h2>
@@ -64,7 +69,59 @@
             <hr class="solid">
         </div>
     </section>
-    <!-- Content section-->
+
+
+    <!-- Presskit section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 50px;">Presskit</h2>
+            <!-- Botones para cambiar entre Vídeos, Imágenes y Artwork -->
+            <div class="gallery-buttons">
+                <button id="videos-button" class="gallery-button active">Vídeos</button>
+                <button id="images-button" class="gallery-button">Imágenes</button>
+                <button id="artwork-button" class="gallery-button">Artwork</button>
+            </div>
+            <!-- Contenido de Vídeos -->
+            <div class="presskit-content videos">
+                <div class="presskit-item">
+                    <!-- Video 1 -->
+                    <div class="presskit-item">
+                        <a data-fancybox="video-gallery" href="https://www.youtube.com/embed/SgSX3gOrj60"
+                            class="fancybox">
+                            <!-- Miniatura del video -->
+                            <img src="images/escenario.jpg" alt="Video 1">
+                        </a>
+                    </div>
+                </div>
+                <!-- Agregar más videos si es necesario -->
+
+            </div>
+
+            <!-- Contenido de Imágenes -->
+            <div class="presskit-content images" style="display: none;">
+                <a href="images/escenario.jpg" data-lightbox="presskit"><img class="presskit-item"
+                        src="images/escenario.jpg" /></a>
+                <a href="images/escenario.jpg" data-lightbox="presskit"><img class="presskit-item"
+                        src="images/escenario.jpg" /></a>
+                <a href="images/escenario.jpg" data-lightbox="presskit"><img class="presskit-item"
+                        src="images/escenario.jpg" /></a>
+                <!-- Agregar más imagenes si es necesario -->
+            </div>
+
+            <!-- Contenido de Artwork -->
+            <div class="presskit-content artwork" style="display: none;">
+                <a href="images/escenario.jpg" data-lightbox="roadtrip"><img class="presskit-item"
+                        src="images/escenario.jpg" src="images/escenario.jpg" /></a>
+                <a href="images/escenario.jpg" data-lightbox="roadtrip"><img class="presskit-item"
+                        src="images/escenario.jpg" src="images/escenario.jpg" /></a>
+                <!-- Agregar más artwork si es necesario -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Team section-->
     <section class="py-5">
         <div class="container my-5 text-center">
             <h2>Nuestro equipo</h2>
@@ -77,7 +134,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 1">
+                                        <img src="images/profilePictures/mohamed.jpeg" alt="Miembro 1">
                                     </div>
                                     <div class="team-name">
                                         <p>Mohamed El Kanboui</p>
@@ -86,9 +143,10 @@
                                         <p>Web Designer</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/metzkb19/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/MetzKB21"><i
+                                                class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +154,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 2">
+                                        <img src="images/profilePictures/andres.jpeg" alt="Miembro 2">
                                     </div>
                                     <div class="team-name">
                                         <p>Andrés González Antohi</p>
@@ -105,9 +163,10 @@
                                         <p>Writer</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/andres_glez04/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/el_callabo"><i
+                                                class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +174,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 3">
+                                        <img src="images/profilePictures/marco.jpeg" alt="Miembro 3">
                                     </div>
                                     <div class="team-name">
                                         <p>Marco Sánchez Nishimura</p>
@@ -124,9 +183,10 @@
                                         <p>Game Designer</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/japospartaco/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/Japospartaco"><i
+                                                class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +194,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 4">
+                                        <img src="images/profilePictures/enrique.jpeg" alt="Miembro 4">
                                     </div>
                                     <div class="team-name">
                                         <p>Enrique Tamajón Castilla</p>
@@ -143,9 +203,10 @@
                                         <p>Programmer</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/enriktc02/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/enriktc02"><i
+                                                class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +214,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 5">
+                                        <img src="images/profilePictures/alexander.jpeg" alt="Miembro 5">
                                     </div>
                                     <div class="team-name">
                                         <p>Alexander Tercero Moreno</p>
@@ -162,9 +223,10 @@
                                         <p>Artist</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/alexandeiro/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/Art_Lexandeiro"><i
+                                                class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +234,7 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="team-card">
                                     <div class="team-image">
-                                        <img src="images/streetFighter.jpg" alt="Miembro 6">
+                                        <img src="images/profilePictures/alexvar.jpg" alt="Miembro 6">
                                     </div>
                                     <div class="team-name">
                                         <p>Alejandro Vargas Lugo</p>
@@ -181,9 +243,9 @@
                                         <p>Graphic Designer</p>
                                     </div>
                                     <div class="team-social">
-                                        <a href="#"><i class="fab fa-facebook icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-twitter icon-black"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin icon-black"></i></a>
+                                        <a href="https://www.instagram.com/alexvar10/"><i
+                                                class="fab fa-instagram icon-black"></i></a>
+                                        <a href="https://twitter.com/TweetAlexvar"><i class="fab fa-twitter icon-black"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -194,16 +256,19 @@
             <hr class="solid">
         </div>
     </section>
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Vcone Games, 2020-2023.</p>
         </div>
     </footer>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="js/lightbox-plus-jquery.js"></script>
 </body>
 
 </html>
