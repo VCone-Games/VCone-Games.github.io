@@ -12753,6 +12753,42 @@ header h2 {
   color: #0056b3;
 }
 
+/* Estilos para tablets y laptops */
+@media (max-width: 1024px) {
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Reducir el padding */
+    margin-bottom: 10px; /* Reducir el margen inferior */
+  }
+
+  .team-image img {
+    width: 100px; /* Disminuir el ancho de la imagen */
+    height: 100px; /* Disminuir la altura de la imagen */
+    margin: 10px auto 5px; /* Ajustar los márgenes para centrar */
+  }
+
+  .team-name {
+    font-size: 16px; /* Reducir el tamaño del nombre */
+    margin-top: 5px; /* Ajustar el margen superior */
+  }
+
+  .team-function {
+    font-size: 12px; /* Reducir el tamaño de la función */
+    margin-top: 2px; /* Ajustar el margen superior */
+  }
+
+  .team-social {
+    margin-top: 10px; /* Ajustar el margen superior */
+  }
+
+  .team-social a {
+    font-size: 20px; /* Reducir el tamaño de los iconos sociales */
+    margin: 0 5px; /* Reducir el margen entre los iconos */
+  }
+}
+
 /* ------------------------------------------------------------*/
 
 /* Estilo para que los iconos de Font Awesome se vean en color negro */
