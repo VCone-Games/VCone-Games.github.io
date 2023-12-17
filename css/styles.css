@@ -6828,11 +6828,16 @@ fieldset:disabled .btn {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 20px); /* Ajusta la distancia desde la parte superior */
-  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo */
-  padding: 10px 20px; /* Ajusta el relleno para mayor legibilidad */
-  border-radius: 10px; /* Esquina redondeada para el fondo */
-  color: #fff; /* Color del texto */
+  transform: translate(-50%, 20px);
+  /* Ajusta la distancia desde la parte superior */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Color de fondo */
+  padding: 10px 20px;
+  /* Ajusta el relleno para mayor legibilidad */
+  border-radius: 10px;
+  /* Esquina redondeada para el fondo */
+  color: #fff;
+  /* Color del texto */
 }
 
 .carousel-dark .carousel-control-prev-icon,
@@ -12609,6 +12614,8 @@ fieldset:disabled .btn {
   }
 }
 
+/* --------------------- Banner responsivo ---------------------*/
+
 .bg-image-full {
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -12670,7 +12677,7 @@ fieldset:disabled .btn {
 
 header {
   /* Banner */
-  background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900');
+  background-image: url('/images/patronBanner.png');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12759,33 +12766,45 @@ header h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px; /* Reducir el padding */
-    margin-bottom: 10px; /* Reducir el margen inferior */
+    padding: 10px;
+    /* Reducir el padding */
+    margin-bottom: 10px;
+    /* Reducir el margen inferior */
   }
 
   .team-image img {
-    width: 100px; /* Disminuir el ancho de la imagen */
-    height: 100px; /* Disminuir la altura de la imagen */
-    margin: 10px auto 5px; /* Ajustar los márgenes para centrar */
+    width: 100px;
+    /* Disminuir el ancho de la imagen */
+    height: 100px;
+    /* Disminuir la altura de la imagen */
+    margin: 10px auto 5px;
+    /* Ajustar los márgenes para centrar */
   }
 
   .team-name {
-    font-size: 16px; /* Reducir el tamaño del nombre */
-    margin-top: 5px; /* Ajustar el margen superior */
+    font-size: 16px;
+    /* Reducir el tamaño del nombre */
+    margin-top: 5px;
+    /* Ajustar el margen superior */
   }
 
   .team-function {
-    font-size: 12px; /* Reducir el tamaño de la función */
-    margin-top: 2px; /* Ajustar el margen superior */
+    font-size: 12px;
+    /* Reducir el tamaño de la función */
+    margin-top: 2px;
+    /* Ajustar el margen superior */
   }
 
   .team-social {
-    margin-top: 10px; /* Ajustar el margen superior */
+    margin-top: 10px;
+    /* Ajustar el margen superior */
   }
 
   .team-social a {
-    font-size: 20px; /* Reducir el tamaño de los iconos sociales */
-    margin: 0 5px; /* Reducir el margen entre los iconos */
+    font-size: 20px;
+    /* Reducir el tamaño de los iconos sociales */
+    margin: 0 5px;
+    /* Reducir el margen entre los iconos */
   }
 }
 
@@ -12898,34 +12917,28 @@ hr.hr-text::before {
   background-color: #f5f5f5;
 }
 
-.gallery-content a {
-  position: relative;
-  display: inline-block;
+.gallery-item {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s, filter 0.3s;
 }
 
-.gallery-content a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.gallery-item img {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s;
-  border-radius: 10px;
-}
-
-.gallery-content a:hover::before {
-  opacity: 1;
-  /* Hace visible la capa translúcida al pasar el ratón */
-}
-
-/* Otros estilos que puedan aplicar */
-.gallery-content img {
-  width: 100%;
+  max-width: 300px;
+  /* Establece el tamaño máximo*/
   transition: transform 0.3s;
 }
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  /* Agranda la imagen al 102% del tamaño original */
+  filter: brightness(0.5);
+  /* Oscurece ligeramente la imagen*/
+}
+
 
 
 
@@ -12965,32 +12978,40 @@ hr.hr-text::before {
   height: auto;
   display: block;
   margin: 0 auto;
-  transition: transform 0.3s;
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .presskit-item img {
   width: 100%;
   max-width: 300px;
-  /* Establece el tamaño máximo según tus preferencias */
   transition: transform 0.3s;
 }
 
-.presskit-item img:hover {
+.presskit-item:hover {
   transform: scale(1.1);
+  /* Agranda la imagen al 110% del tamaño original */
+  filter: brightness(0.5);
+  /* Oscurece ligeramente la imagen*/
 }
 
 /* --------------------- Carousel ---------------------*/
 
 
 #mechanicCarousel {
-  width: 100%; /* Ajusta según tu diseño */
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 
 #mechanicCarousel .carousel-inner img {
-  width: 100%; /* Ajusta el tamaño según tu preferencia */
+  width: 100%;
   height: auto;
 }
 
 /* ------------------------------------------------------------*/
+
+/* Estilo para el logo de LinkTree */
+.linktree-logo {
+  width: 50px;
+  height: 50px;
+}
